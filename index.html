@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Основы JS</title>
+</head>
+<body>
+    <h1>ЯП JavaScript</h1>
+
+    <script>
+        // let str = "hello, \"world\"";
+        // console.log(str);
+
+        // let a, b;
+        // a = 16;
+        // b = 5;
+        // console.log(18/5);
+        // console.log(Math.floor(18/5));
+        
+        // a = 1;
+        // b = ++a;
+        // console.log(a, b);
+
+
+        // let x1, x2, sum;
+        // x1 = parseFloat(prompt("Введите превое число", 0));
+        // x2 = parseFloat(prompt("Введите второе число", 0));
+        // sum = x1 + x2;
+        // alert("Сумма равна " + sum);
+
+        // let numInFolder, numOnPage, numOfPages;
+        // numInFolder = parseInt(prompt("Введите кол=во фото в папке"));
+        // numOnPage = parseInt(prompt("Введите кол=во фото на одной странице"));
+        // numOfPages = Math.ceil(numInFolder / numOnPage);
+        // alert("кол-во страниц" + numOfPages);
+
+        // найти сумму цифр 6-значного числа
+        let number, d1, d2, d3, d4, d5, d6;
+        number = parseInt(prompt("Введите 6-значное число"));
+        d1 = number % 10; //еденицы
+        d2 = Math.floor(number / 10) % 10; //десятки
+        d3 = Math.floor(number / 100) % 10;// сотни
+        d4 = Math.floor(number / 1000) % 10;
+        d5 = Math.floor(number / 10000) % 10;
+        d6 = Math.floor(number / 100000) % 10;
+        alert(d1+d2+d3+d4+d5+d6);
+
+    </script>
+</body>
+</html>
