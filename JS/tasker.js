@@ -57,14 +57,23 @@ function compare(a, b){
     if(a.querySelector("span").innerHTML < b.querySelector("span").innerHTML) return -1;
 }
 btn1.addEventListener("click", function(){
-    let newTask = [...tasks].sort(compare);
+    let newTasks = [].slice.call(tasks).sort(compare);
     container.innerHTML = "";
     for (let i in newTasks) {
         container.append(newTasks[i]);
     }
 });
 
+const btn2 = document.getElementById("btn2");
+btn2.addEventListener("click", function() {
+    let newTasks = [].slice.call(tasks).sort(compare).reverse();
+    container.innerHTML = "";
+    for (let i in newTasks) {
+        container.appendChild(newTasks[i]);
+      }
+});
 
+const btn3 = document.getElementById("btn3");
 btn3.addEventListener("click", function() {
     let newTasks = [...tasks];
     newTasks = newTasks.filter(task => task.classList.contains("importent"));
@@ -72,24 +81,28 @@ btn3.addEventListener("click", function() {
     for (let task of newTasks){
         container.append(task);
     }
-})
+});
 
-
+const btn4 = document.getElementById("btn4");
 btn4.addEventListener("click",function(){
+    let newTasks = [...tasks];
     let value = document.getElementById("taskInput").value.toLowerCase().trim();
     newTasks = newTasks.filter(function(item){
-        return item.innerHTML.indexOf(value) != -1;
+        return item.innerHTML.toLowerCase().indexOf(value) != -1;
     });
     container.innerHTML = "";
-    newTasks.forEach(function(item){
-        container.appendChild(item);
+    newTasks.forEach(function(task) {
+        container.appendChild(task);
     });
-})
+});
 
+const btn5 = document.getElementById("btn5");
 btn5.addEventListener("click", function(){
-    newTasks = [...tasks];
+    let newTasks = [...tasks];
     container.innerHTML = "";
-    renderList(newTasks);
+    newTasks.forEach(function(task){
+        container.appendChild(task);
+    })
 });
 
 // BigInt64Array.addEventListener("click", function(){

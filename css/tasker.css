@@ -11,7 +11,7 @@
 }
 
 .container {
-    margin-top: 50px;
+    margin-top: 20px;
     background-color: lavender;
     border: 1px solid darkblue;
     border-radius: 10px;
@@ -41,4 +41,8 @@
 .btn-remove:hover,
 .btn-remove:focus{
     color: slateblue;
+}
+.list-bnts{
+    display: inline-block;
+    margin-top: 20px;
 }
